@@ -13,9 +13,9 @@
 
 class Triangle {
 public:
-    inline Triangle () { init (0, 0, 0, (float[]){0, 0, 0}, (float[]){0, 0, 0}); }
-    inline Triangle (unsigned int v0, unsigned int v1, unsigned int v2) { init (v0, v1, v2, (float[]){0, 0, 0}, (float[]){0, 0, 0}); }
-    inline Triangle (const unsigned int * vp) { init (vp[0], vp[1], vp[2], (float[]){0, 0, 0}, (float[]){0, 0, 0}); }
+    inline Triangle () { init (0, 0, 0, (const float[]){0, 0, 0}, (const float[]){0, 0, 0}); }
+    inline Triangle (unsigned int v0, unsigned int v1, unsigned int v2) { init (v0, v1, v2, (const float[]){0, 0, 0}, (const float[]){0, 0, 0}); }
+    inline Triangle (const unsigned int * vp) { init (vp[0], vp[1], vp[2], (const float[]){0, 0, 0}, (const float[]){0, 0, 0}); }
     inline Triangle (const Triangle & it) { init (it.vertices[0], it.vertices[1], it.vertices[2], it.us, it.vs); }
     inline virtual ~Triangle () {}
     inline Triangle & operator=(const Triangle & it) {

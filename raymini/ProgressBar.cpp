@@ -51,7 +51,7 @@ void ProgressBar::operator()() {
         lastNow = now;
         emit updatedPercent(percent);
     }
-    else if (chrono::microseconds(now - lastNow).count() > MIN_TIME) {
+    else if (std::chrono::duration_cast<std::chrono::microseconds>(now - lastNow).count() > MIN_TIME) {
         lastPercent = percent;
         lastNow = now;
         emit updatedPercent(percent);

@@ -399,7 +399,7 @@ void GLViewer::draw() {
         currentFocusPoint.getNormal().getTwoOrthogonals(X,Y);
         glDisable (GL_LIGHTING);
         glColor3f(focusColor[0], focusColor[1], focusColor[2]);
-        auto minidraw = [&currentFocusPoint](const Vec3Df & delta) {
+        auto minidraw = [=](const Vec3Df & delta) {
             const Vec3Df pos = currentFocusPoint.getPos() + 0.01*currentFocusPoint.getNormal();
             Vec3Df tmp = pos + delta;
             glVertex3f(tmp[0], tmp[1], tmp[2]);
